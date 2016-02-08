@@ -1,0 +1,14 @@
+﻿Build started 2/7/2016 9:17:14 PM.
+     1>Project "D:\Git Repositories\game-design\prototype1\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Git Repositories\game-design\prototype1\Debug\NYUCodebase.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 SDL2.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Git Repositories\game-design\prototype1\Debug\NYUCodebase.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Git Repositories\game-design\prototype1\Debug\NYUCodebase.lib" /MACHINE:X86 Debug\Entity.obj
+         Debug\main.obj
+         Debug\Piece.obj
+         Debug\Tile.obj
+         Debug\EightQueens.obj
+         NYUCodebase.vcxproj -> D:\Git Repositories\game-design\prototype1\Debug\NYUCodebase.exe
+     1>Done Building Project "D:\Git Repositories\game-design\prototype1\NYUCodebase\NYUCodebase.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.33
