@@ -20,14 +20,18 @@ PoopGame::PoopGame() {
 }
 
 void PoopGame::Init() {
-	if (!fontSheetTexture)
+	if (fontSheetTexture == 0)
 		fontSheetTexture = LoadTexture("pixel_font.png");
 	srand(time(NULL));
-	
 	for (int i = 0; i < entities.size(); i++) {
 		delete entities[i];
 	}
 	entities.clear();
+	poops.clear();
+	peoples.clear();
+
+	score = 2000;
+	gameState = 0;
 
 	Poop* bigPoop = new Poop(0.3f, 0.3f, 0.0f, 0.0f, 0.0f);
 	bigPoop->setColor(130, 100, 80);
@@ -62,6 +66,7 @@ void PoopGame::Init() {
 
 		peep->setColor(200, 200, 200);
 		entities.push_back(peep);
+		peoples.push_back(peep);
 	}
 	
 
@@ -188,17 +193,46 @@ void PoopGame::Update(float elapsed) {
 		entities[i]->Update(elapsed);
 	}
 
+
 	
 	entities.erase(std::remove_if(
 		entities.begin(), entities.end(),
-		[](Entity* ent) { return ent->killed; }),
+		[](Entity* ent) {
+			return ent->killed;
+		}),
 		entities.end());
+
+	poops.erase(std::remove_if(
+		poops.begin(), poops.end(),
+		[](Poop* poop) {
+		return poop->killed;
+	}),
+		poops.end());
+
+	if (score <= 0) gameState = 1;
+	
+	if (gameState == 0) {
+		bool all_infected = true;
+		for (auto peep : peoples) {
+			if (!peep->infected) all_infected = false;
+		}
+		if (all_infected) {
+			gameState = 2;
+		}
+	}
+
+	if (gameState == 0) {
+		if (poops.size() == 0) gameState = 1;
+	}
+	
 }
 
 void PoopGame::FixedUpdate() {
 	for (size_t i = 0; i < entities.size(); i++) {
 		entities[i]->FixedUpdate();
 	}
+	if (gameState == 0)
+		score--;
 }
 
 void PoopGame::Render() {
@@ -209,7 +243,24 @@ void PoopGame::Render() {
 	for (size_t i = 0; i < entities.size(); i++) {
 		entities[i]->Render();
 	}
+
+	glLoadIdentity();
+	glTranslatef(-1.3f, 0.95f, 0.0f);
+	DrawText(fontSheetTexture, "Score: " + to_string(score), 0.05, 0.0, 0.0, 0.0, 0.0, 1.0);
+
+	if (gameState == 1) {
+		glLoadIdentity();
+		glTranslatef(-0.6f, -0.90f, 0.0f);
+		DrawText(fontSheetTexture, "You lose! Press R to reset.", 0.05, 0.0, 1.0, 0.0, 0.0, 1.0);
+	}
+	else if (gameState == 2) {
+		glLoadIdentity();
+		glTranslatef(-0.6f, -0.90f, 0.0f);
+		DrawText(fontSheetTexture, "You won! Press R to reset.", 0.05, 0.0, 0.0, 1.0, 0.0, 1.0);
+	}
 	
+	
+
 	SDL_GL_SwapWindow(displayWindow);
 }
 

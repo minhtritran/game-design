@@ -10,10 +10,10 @@ void People::Update(float elapsed) {
 	Entity::Update(elapsed);
 
 	if (!infected) {
-		if (x < -1.33f) x = 1.33f;
-		if (x > 1.33f) x = -1.33f;
-		if (y < -1.0f) y = 1.0f;
-		if (y > 1.0f) y = -1.0f;
+		if (x < -1.53f) x = 1.53f;
+		if (x > 1.53f) x = -1.53f;
+		if (y < -1.2f) y = 1.2f;
+		if (y > 1.2f) y = -1.2f;
 	}
 	
 	Poop* col_poop = dynamic_cast<Poop*>(collision);

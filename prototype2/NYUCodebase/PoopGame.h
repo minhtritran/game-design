@@ -41,7 +41,11 @@ private:
 
 	vector<Entity*> entities;
 	vector<Poop*> poops;
+	vector<People*> peoples;
 	Entity* dragEntity;
 
 	bool dragging;
+
+	int score;
+	int gameState;
 };
