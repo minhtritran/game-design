@@ -12,5 +12,4 @@ public:
 	float infected_threshold;
 	bool infected;
 
-
 };
