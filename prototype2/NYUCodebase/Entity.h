@@ -6,6 +6,17 @@
 
 #define FIXED_TIMESTEP 0.0166666f
 
+#define STARTING_SCORE 2500
+#define MOUSE_SMEAR_RADIUS 0.3f
+#define INITIAL_POOP_SIZE 0.3f
+#define POOP_SHRINK_FACTOR 5.0f
+#define POOP_PUSH_FACTOR 0.5f
+#define POOP_FRICTION 3.0f
+#define PEOPLE_SIZE 0.07f
+#define PEOPLE_MIN_SPEED 0.2f
+#define PEOPLE_MAX_SPEED 0.3f
+#define PEOPLE_RUNAWAY_SPEED_FACTOR 1.5f;
+
 class Entity {
 public:
 	~Entity();

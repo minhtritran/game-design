@@ -2,8 +2,8 @@
 
 Poop::Poop(float height, float width, float x, float y, float rotation)
 	: Entity(height, width, x, y, rotation) {
-	friction_x = 10.0f;
-	friction_y = 10.0f;
+	friction_x = POOP_FRICTION;
+	friction_y = POOP_FRICTION;
 	draggable = true;
 }
 

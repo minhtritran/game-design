@@ -10,17 +10,17 @@ void People::Update(float elapsed) {
 	Entity::Update(elapsed);
 
 	if (!infected) {
-		if (x < -1.53f) x = 1.53f;
-		if (x > 1.53f) x = -1.53f;
-		if (y < -1.2f) y = 1.2f;
-		if (y > 1.2f) y = -1.2f;
+		if (x < -1.33f) x = 1.33f;
+		if (x > 1.33f) x = -1.33f;
+		if (y < -1.0f) y = 1.0f;
+		if (y > 1.0f) y = -1.0f;
 	}
 	
 	Poop* col_poop = dynamic_cast<Poop*>(collision);
 	People* col_peep = dynamic_cast<People*>(collision);
 	if (!infected && (col_poop != 0 || col_peep != 0)) {
 		if (col_poop != 0) {
-			float amountToReduce = (infected_threshold - infected_amount) / 3.0f;
+			float amountToReduce = (infected_threshold - infected_amount) / POOP_SHRINK_FACTOR;
 			if (amountToReduce < 0.0f) amountToReduce = 0.0f;
 			col_poop->reduceSize(amountToReduce);
 		}
@@ -53,8 +53,8 @@ void People::Update(float elapsed) {
 		float vector_x = (x - 0.0f) / dist;
 		float vector_y = (y - 0.0f) / dist;
 
-		velocity_x = vector_x * 1.5f;
-		velocity_y = vector_y * 1.5f;
+		velocity_x = vector_x * PEOPLE_RUNAWAY_SPEED_FACTOR;
+		velocity_y = vector_y * PEOPLE_RUNAWAY_SPEED_FACTOR;
 		
 		infected = true;
 	}

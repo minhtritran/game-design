@@ -5,7 +5,7 @@
 
 PoopGame::PoopGame() {
 	SDL_Init(SDL_INIT_VIDEO);
-	displayWindow = SDL_CreateWindow("Poop!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
+	displayWindow = SDL_CreateWindow("Brown!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
 	SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
 	SDL_GL_MakeCurrent(displayWindow, context);
 
@@ -30,16 +30,17 @@ void PoopGame::Init() {
 	poops.clear();
 	peoples.clear();
 
-	score = 2000;
+	score = STARTING_SCORE;
 	gameState = 0;
+	dragging = false;
 
-	Poop* bigPoop = new Poop(0.3f, 0.3f, 0.0f, 0.0f, 0.0f);
+	Poop* bigPoop = new Poop(INITIAL_POOP_SIZE, INITIAL_POOP_SIZE, 0.0f, 0.0f, 0.0f);
 	bigPoop->setColor(130, 100, 80);
 	bigPoop->draggable = true;
 	entities.push_back(bigPoop);
 	poops.push_back(bigPoop);
 
-	for (int i = 0; i < 50; i++) {
+	for (int i = 0; i <50; i++) {
 		float xDist = randFloat(0.0f, 1.0f);
 		float yDist = 1.0f - xDist;
 		float randXDistance = randFloat(0.0f, 0.3f);
@@ -52,12 +53,12 @@ void PoopGame::Init() {
 			yDist *= -1.0f;
 			randYDistance *= -1.0f;
 		}
-		People* peep = new People(0.07f, 0.07f, xDist + randXDistance, yDist + randYDistance, 0.0f);
+		People* peep = new People(PEOPLE_SIZE, PEOPLE_SIZE, xDist + randXDistance, yDist + randYDistance, 0.0f);
 		if (rand() % 2 == 0) {
-			peep->velocity_x = randFloat(0.2f, 0.3f);
+			peep->velocity_x = randFloat(PEOPLE_MIN_SPEED, PEOPLE_MAX_SPEED);
 		}
 		else {
-			peep->velocity_y = randFloat(0.2f, 0.3f);
+			peep->velocity_y = randFloat(PEOPLE_MIN_SPEED, PEOPLE_MAX_SPEED);
 		}
 		if (rand() % 2 == 0) {
 			peep->velocity_x *= -1;
@@ -135,9 +136,11 @@ void PoopGame::Update(float elapsed) {
 			for (size_t i = 0; i < entities.size(); i++) {
 				if (entities[i]->draggable && isCollidingWithMouse(entities[i], event.button.x, event.button.y)) {
 					dragEntity = entities[i];
+					
 				}
 			}
 			dragging = true;
+			
 		}
 		else if (event.type == SDL_MOUSEBUTTONUP) {
 			dragEntity = nullptr;
@@ -175,9 +178,9 @@ void PoopGame::Update(float elapsed) {
 						float vector_x = (poop->x - mouse_x) / dist;
 						float vector_y = (poop->y - mouse_y) / dist;
 
-						if (dist < 0.3f) {
-							poop->velocity_x = vector_x * 0.5f;
-							poop->velocity_y = vector_y * 0.5f;
+						if (dist < MOUSE_SMEAR_RADIUS) {
+							poop->velocity_x = vector_x * POOP_PUSH_FACTOR;
+							poop->velocity_y = vector_y * POOP_PUSH_FACTOR;
 						}
 					}
 					
@@ -191,6 +194,7 @@ void PoopGame::Update(float elapsed) {
 
 	for (size_t i = 0; i < entities.size(); i++) {
 		entities[i]->Update(elapsed);
+		entities[i]->collision = nullptr;
 	}
 
 
