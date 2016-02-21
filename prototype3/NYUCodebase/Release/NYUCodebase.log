@@ -1,0 +1,22 @@
+﻿Build started 2/14/2016 12:05:08 PM.
+     1>Project "D:\Git Repositories\game-design\prototype2\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /IC:\SDL2\include /IC:\SDL2_image\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Git Repositories\game-design\prototype2\Release\NYUCodebase.exe" /NOLOGO /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 SDL2.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Git Repositories\game-design\prototype2\Release\NYUCodebase.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Git Repositories\game-design\prototype2\Release\NYUCodebase.lib" /MACHINE:X86 /SAFESEH Release\Entity.obj
+         Release\main.obj
+         Release\Piece.obj
+         Release\Tile.obj
+         Release\PoopGame.obj
+         Generating code
+         253 of 253 functions (100.0%) were compiled, the rest were copied from previous compilation.
+           12 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
+         Finished generating code
+         NYUCodebase.vcxproj -> D:\Git Repositories\game-design\prototype2\Release\NYUCodebase.exe
+     1>Done Building Project "D:\Git Repositories\game-design\prototype2\NYUCodebase\NYUCodebase.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.79
