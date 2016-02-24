@@ -1,30 +1,40 @@
-﻿Build started 2/21/2016 6:47:49 PM.
-     1>Project "D:\Git Repositories\game-design\prototype3\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /IC:\SDL2\include /IC:\SDL2_image\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
-         Game.cpp
-     1>d:\git repositories\game-design\prototype3\nyucodebase\entity.h(12): warning C4005: 'M_PI': macro redefinition
-         c:\sdl2\include\sdl_stdinc.h(436): note: see previous definition of 'M_PI'
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(27): warning C4018: '<': signed/unsigned mismatch
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(31): warning C4018: '<': signed/unsigned mismatch
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(53): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(162): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(201): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(240): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(245): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(249): warning C4305: 'argument': truncation from 'double' to 'float'
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(298): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-     1>d:\git repositories\game-design\prototype3\nyucodebase\game.cpp(321): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Git Repositories\game-design\prototype3\Debug\NYUCodebase.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 SDL2.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Git Repositories\game-design\prototype3\Debug\NYUCodebase.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Git Repositories\game-design\prototype3\Debug\NYUCodebase.lib" /MACHINE:X86 Debug\Cell.obj
-         Debug\Entity.obj
-         Debug\main.obj
-         Debug\Pulser.obj
-         Debug\Game.obj
-         NYUCodebase.vcxproj -> D:\Git Repositories\game-design\prototype3\Debug\NYUCodebase.exe
-     1>Done Building Project "D:\Git Repositories\game-design\prototype3\NYUCodebase\NYUCodebase.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:02.39
+﻿  Cell.cpp
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.h(12): warning C4005: 'M_PI': macro redefinition
+  c:\sdl2\include\sdl_stdinc.h(436): note: see previous definition of 'M_PI'
+  Generating Code...
+  Compiling...
+  main.cpp
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.h(12): warning C4005: 'M_PI': macro redefinition
+  c:\sdl2\include\sdl_stdinc.h(436): note: see previous definition of 'M_PI'
+  Pulser.cpp
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.h(12): warning C4005: 'M_PI': macro redefinition
+  c:\sdl2\include\sdl_stdinc.h(436): note: see previous definition of 'M_PI'
+  Game.cpp
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.h(12): warning C4005: 'M_PI': macro redefinition
+  c:\sdl2\include\sdl_stdinc.h(436): note: see previous definition of 'M_PI'
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(27): warning C4018: '<': signed/unsigned mismatch
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(31): warning C4018: '<': signed/unsigned mismatch
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(53): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(162): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(201): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(240): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(245): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(249): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(298): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\game.cpp(321): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Entity.cpp
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.h(12): warning C4005: 'M_PI': macro redefinition
+  c:\sdl2\include\sdl_stdinc.h(436): note: see previous definition of 'M_PI'
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(79): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(121): warning C4838: conversion from 'int' to 'GLfloat' requires a narrowing conversion
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(121): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(158): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(175): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\blue\git\game-design\prototype3\nyucodebase\entity.cpp(177): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  NYUCodebase.vcxproj -> C:\Users\blue\git\game-design\prototype3\Debug\NYUCodebase.exe

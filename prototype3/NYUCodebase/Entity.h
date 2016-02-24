@@ -13,7 +13,7 @@
 
 #define NUM_CELLS 40
 #define BACKGROUND_SHADE 0.3f
-#define PULSE_SPEED 30
+#define PULSE_SPEED 20
 #define WAVE_WIDTH 0.03f
 #define WAVE_SPEED 0.06f
 #define CELL_SIZE 0.05f

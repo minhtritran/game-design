@@ -80,22 +80,22 @@ void Game::Update(float elapsed) {
 			if (event.key.keysym.scancode == SDL_SCANCODE_R) {
 			}
 			else if (event.key.keysym.scancode == SDL_SCANCODE_SPACE) {
-				
+				if (gameState != 0) {
+					Init();
+					return;
+				}
+				if (pulses.size() <= 0) {
+					Entity* pulse = new Entity(0.0f, 0.0f, 0.2f);
+					pulse->setColor(entities[0]->getCurrentColor());
+					pulses.push_back(pulse);
+					sendFollowupWave = true;
+					wave_shade = get<1>(entities[0]->getCurrentColor());
+				}
 				
 			}
 		}
 		else if (event.type == SDL_MOUSEBUTTONDOWN) {
-			if (gameState != 0) {
-				Init();
-				return;
-			}
-			if (pulses.size() <= 0) {
-				Entity* pulse = new Entity(0.0f, 0.0f, 0.2f);
-				pulse->setColor(entities[0]->getCurrentColor());
-				pulses.push_back(pulse);
-				sendFollowupWave = true;
-				wave_shade = get<1>(entities[0]->getCurrentColor());
-			}
+	
 		}
 		else if (event.type == SDL_MOUSEBUTTONUP) {
 
@@ -237,7 +237,7 @@ void Game::Render() {
 
 		glLoadIdentity();
 		glTranslatef(-1.2f, -0.9f, 0.0f);
-		DrawText(fontSheetTexture, "You survived. Click to reset.", 0.05, 0.0, 1.0, 1.0, 1.0, 1.0);
+		DrawText(fontSheetTexture, "You survived. Press SPACEBAR to reset.", 0.05, 0.0, 1.0, 1.0, 1.0, 1.0);
 	}
 	else if (gameState == 2) {
 		glLoadIdentity();
@@ -246,7 +246,7 @@ void Game::Render() {
 
 		glLoadIdentity();
 		glTranslatef(-1.2f, -0.9f, 0.0f);
-		DrawText(fontSheetTexture, "Click to reset.", 0.05, 0.0, 1.0, 1.0, 1.0, 1.0);
+		DrawText(fontSheetTexture, "Press SPACEBAR to reset.", 0.05, 0.0, 1.0, 1.0, 1.0, 1.0);
 	}
 
 
