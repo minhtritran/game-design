@@ -26,7 +26,8 @@ public class chargeScript : MonoBehaviour {
                     Vector2 direction = obj.transform.position - transform.position;
                     if (difference >= distance)
                     {
-                        GetComponent<Rigidbody2D>().AddForce(direction.normalized * difference * 0.3f / distance);
+                        if (GetComponent<Rigidbody2D>())
+                            GetComponent<Rigidbody2D>().AddForce(direction.normalized * difference * (obj.transform.localScale.x/2.0f) / distance);
                     }
                 }
                 //repulsion
@@ -37,7 +38,8 @@ public class chargeScript : MonoBehaviour {
                     Vector2 direction = transform.position - obj.transform.position;
                     if (difference >= distance)
                     {
-                        GetComponent<Rigidbody2D>().AddForce(direction.normalized * difference * 0.3f / distance);
+                        if (GetComponent<Rigidbody2D>())
+                            GetComponent<Rigidbody2D>().AddForce(direction.normalized * difference * (obj.transform.localScale.x / 2.0f) / distance);
                     }
                 }
             }

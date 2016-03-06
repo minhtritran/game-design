@@ -8,7 +8,7 @@ public class spawner : MonoBehaviour {
     public GameObject proton;
     public GameObject enemy;
     public Text winText;
-
+    public bool requireEnemyDead;
     public int numEnemies;
     public int numBalls;
 	// Use this for initialization
@@ -59,7 +59,7 @@ public class spawner : MonoBehaviour {
 
         goalScript goal = FindObjectOfType(typeof(goalScript)) as goalScript;
         enemyScript[] enemies = FindObjectsOfType(typeof(enemyScript)) as enemyScript[];
-        if (goal.touchedGoal && enemies.Length <= 1) {
+        if (goal.touchedGoal && (!requireEnemyDead || enemies.Length <= 1)) {
             winText.text = "You won! Press R to reset";
         }
 
